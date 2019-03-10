@@ -1,0 +1,19 @@
+Package: holidayplanneR
+Type: Package
+Title: Which holidays are, or will be, taking place?
+Version: 0.1.0
+Authors@R: person("Zu Cheng Mark", "Ong", email = "zo2141@columbia.edu", role = c("aut", "cre"))
+Description: Allows one to find out more about the holidays taking place in a specific year in a specific country.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Imports: 
+    dplyr,
+    stringr,
+    httr
+Depends: R (>= 2.10)

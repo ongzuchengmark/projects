@@ -1,0 +1,54 @@
+---
+title: "The holidayplanneR package explained"
+author: "Ong Zu Cheng Mark"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{The holidayplanneR package explained}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The `holidayplanneR` package contains three functions: `holidaylist()`, `longholidays()`, and `isitholidays()`.
+
+For all functions, the 'country' parameter should always be specified in the form of ISO 3166 country code. 
+
+Users will need to sign up for a free CalendarIndex API key (from: https://www.calendarindex.com/signup?plan=free) in order to use any of the three functions. 
+
+## `holidaylist()` Function
+
+The `holidaylist()` function finds all the holidays that are taking place in a specified country (or list of countries) in a specified year.
+
+User input of one country (or a list of countries), a specified year, and his/her CalendarIndex API key is required. A dataframe of all the holidays that are taking place in the country/countries in the specified year will be generated. 
+
+The results in the dataframe are arranged by country, and then arranged by date. 
+
+The information in the dataframe includes the date of holiday, the country, the name of holiday, and the type of holiday (public, observance, optional, etc).
+
+
+## `longholidays` Function
+
+The `longholidays` function finds all the long blocks of holidays in in a specified country (or list of countries) in a specified year.
+
+User input of one country (or a list of countries), a specified year, and his/her CalendarIndex API key is required. A dataframe of all the holiday blocks in the country/countries in the specified year will be generated.
+
+The results in the dataframe are arranged by country, then arranged by the length of block holiday (in descending order), then arranged by the date. 
+
+The information in the dataframe includes the specified year, the country, the start date and day of the long holiday, the end date and day of the long holiday, the total length of the long holiday (in days). Note that only public holidays are considered (observances and optional holidays are excluded).
+
+
+## `isitholiday` Function
+
+The `isitholiday` function answers the question: Is the specified date a holiday in the specified country and year?
+
+User input of a single date of interest (in the format of %Y-%m-%d), one country, and his/her CalendarIndex API key is required.
+
+This function will return TRUE if the specified date is a holiday in the specified country and year, FALSE if the specified date is not a holiday in the specified country and year.
+
